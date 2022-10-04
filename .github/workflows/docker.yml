@@ -1,0 +1,19 @@
+name: build and push on docker hub
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+jobs:
+  build_and_push:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Build and Push Docker Image
+      uses: mr-smithers-excellent/docker-build-push@v4
+      with:
+        image: 7011347758/test
+        registry: docker.io
+        username: ${{ secrets.DOCKER_USERNAME }}
+        password: ${{ secrets.DOCKER_PASSWORD }}

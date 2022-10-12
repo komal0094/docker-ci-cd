@@ -33,7 +33,7 @@ RUN apt update -y && apt install default-jdk -y
 RUN mkdir -p /opt/tomcat/
 
 ADD apache-tomcat-9.0.67.tar.gz /opt/tomcat/
-COPY ecomm /opt/tomcat/apache-tomcat-9.0.67/webapps/ROOT/
+COPY ecom /opt/tomcat/apache-tomcat-9.0.67/webapps/ROOT/
 
 EXPOSE 8080
 
